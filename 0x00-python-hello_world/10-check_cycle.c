@@ -9,18 +9,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *tmp, *tmp2;
+	listint_t *tmp;
 
 	if (list == NULL || list->next == NULL || list->next->next == NULL)
 		return (0);
 
 	tmp = list;
-	tmp2 = list;
 	while (tmp)
 	{
 		tmp = tmp->next->next;
-		tmp2 = tmp2->next;
-		if (tmp == tmp2)
+		list = list->next;
+		if (tmp == list)
 			return (1);
 	}
 	return (0);
