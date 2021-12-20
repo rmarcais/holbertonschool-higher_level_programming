@@ -11,8 +11,11 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tmp = list, *tmp2 = list;
 
+	if (list == NULL)
+		return (0);
 
-	while (tmp2 != NULL)
+
+	while (1)
 	{
 		tmp = tmp->next->next;
 		if (tmp == NULL)
@@ -21,5 +24,4 @@ int check_cycle(listint_t *list)
 		if (tmp == tmp2)
 			return (1);
 	}
-	return (0);
 }
