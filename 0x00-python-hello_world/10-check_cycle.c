@@ -11,17 +11,16 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tmp = list, *tmp2 = list;
 
-	if (list == NULL)
+	if (list == NULL || list->next == NULL)
 		return (0);
 
 
-	while (1)
+	while (tmp)
 	{
 		tmp = tmp->next->next;
-		if (tmp == NULL)
-			return (0);
 		tmp2 = tmp2->next;
 		if (tmp == tmp2)
 			return (1);
 	}
+	return (0);
 }
