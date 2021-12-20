@@ -9,20 +9,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *tmp = list, *tmp2 = list;
+	listint_t *tmp = list, *tmp2;
 	int i, j = 1;
 
 
 	while (tmp != NULL)
 	{
 		tmp = tmp->next;
-		for (i = 1; i <= j; i++)
-		{
+		tmp2 = list;
+		for (i = 1; i <= j; i++, tmp2 = tmp2->next)
 			if (tmp == tmp2)
 				return (1);
-			tmp2 = tmp2->next;
-		}
-		tmp2 = list;
 		j++;
 	}
 	return (0);
