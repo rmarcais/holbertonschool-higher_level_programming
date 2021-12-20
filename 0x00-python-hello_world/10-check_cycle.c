@@ -11,15 +11,14 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tmp = list;
 
-	if (list != NULL || list->next != NULL)
-	{
-		while (tmp)
-		{
-			tmp = tmp->next->next;
-			list = list->next;
-			if (tmp == list)
-				return (1);
-		}
+	if (list == NULL || list->next==NULL)
+		return (0);
+	while (tmp)
+       	{
+		tmp = tmp->next->next;
+	       	list = list->next;
+       		if (tmp == list)
+			return (1);
 	}
 	return (0);
 }
