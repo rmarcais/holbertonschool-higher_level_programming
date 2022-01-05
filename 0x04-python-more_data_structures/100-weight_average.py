@@ -2,7 +2,7 @@
 def weight_average(my_list=[]):
     coeff = 0
     total = 0
-    if my_list is None or my_list == 0:
+    if my_list is None or my_list == []:
         return 0
     for i in range(len(my_list)):
         total += my_list[i][0] * my_list[i][1]
