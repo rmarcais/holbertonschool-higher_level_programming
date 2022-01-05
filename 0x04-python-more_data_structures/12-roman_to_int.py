@@ -3,7 +3,7 @@ def roman_to_int(roman_string):
     r = roman_string
     rd = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     sum = 0
-    if r is None or r == "":
+    if isinstance(roman_string, str) == 0 or r is None or r == "":
         return 0
     for i in range(len(r)):
         if r[i] not in rd:
