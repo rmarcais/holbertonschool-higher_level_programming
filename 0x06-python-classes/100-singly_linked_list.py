@@ -39,6 +39,8 @@ class Node:
 
     """Initializes a node with parameters data and next_node"""
     def __init__(self, data, next_node=None):
+        if type(data) != int:
+            raise TypeError("data must be an integer")
         self.__data = data
         self.__next_node = next_node
 
