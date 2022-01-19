@@ -47,16 +47,16 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """property method
         Args:
         size: The new size of the square which must be a positiv integer.
         """
-        self.__size = size
-        if type(size) != int:
+        if type(value) != int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
         """This method returns the current square area"""
