@@ -79,7 +79,7 @@ class Square:
     def __gt__(self, other):
         """tests if a square is greater than to another square"""
         if isinstance(other, Square):
-            return self.__size ** 2 >= other.__size ** 2
+            return self.__size ** 2 > other.__size ** 2
 
     def __ge__(self, other):
         """tests if a square is graeter or equal to another square"""
