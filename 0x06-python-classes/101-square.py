@@ -119,8 +119,7 @@ class Square:
         """This method tells the main program how to print a square"""
 
         if self.__size == 0:
-            print("")
-            return
+            return ""
         for a in range(0, self.__position[1]):
             print("")
         else:
