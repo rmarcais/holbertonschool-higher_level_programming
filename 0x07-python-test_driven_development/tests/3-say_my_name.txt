@@ -1,0 +1,111 @@
+===========================
+How to use 3-say_my_name.py
+===========================
+
+Requirements
+------------
+
+. first_name and last_name must be strings otherwise, raise a TypeError
+ exception with the message first_name must be a string or last_name must
+ be a string
+
+
+Tests:
+======
+
+first_name and last_name as strings:
+------------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+
+>>> say_my_name("Bob")
+My name is Bob 
+
+
+>>> say_my_name("The", "Rock")
+My name is The Rock
+
+
+>>> say_my_name(str(123), str(456))
+My name is 123 456
+
+first_name as a non-string:
+---------------------------
+
+
+>>> say_my_name(1, "Smith")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name(None, "White")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name(2.6, "Rock")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name((1, 2), "Smith")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name([1, 2, 3], "White")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name(float("NaN"), "Rock")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name(float("inf"), "Smith")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+last_name as a non-string:
+--------------------------
+
+
+>>> say_my_name("John", 1)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name("Walter", (1, 2))
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name("The", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name(str(123), float("NaN"))
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name(str("hello"), float("inf"))
+Traceback (most recent call last):
+TypeError: last_name must be a string
