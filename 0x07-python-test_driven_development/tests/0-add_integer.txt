@@ -1,0 +1,104 @@
+===========================
+How to use 0-add_integer.py
+===========================
+
+Requirements
+------------
+. a and b must be integers or floats otherwise raise a TypeError
+exception with the message a must be an integer or b must be an integer
+. a and b must be first casted to integers if they are float
+. Returns an integer: the addition of a and b
+
+Tests:
+======
+
+Numbers:
+--------
+
+It works when a and b are numbers (int or float):
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(-5, -5)
+-10
+
+>>> add_integer(-1, 5)
+4
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(20.2, 20.99)
+40
+
+Non-numbers:
+------------
+
+But it doesn't work when a or b is not a number (int or float):
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer(5, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+
+>>> add_integer("Holberton", 4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer("Holberton", "School")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer([1, 2, 3], 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer(1, (2, 3))
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer(1, float("inf"))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+
+>>> add_integer(3, float("NaN"))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
