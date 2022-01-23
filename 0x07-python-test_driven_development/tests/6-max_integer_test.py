@@ -16,6 +16,10 @@ class TestMaxInteger(unittest.TestCase):
         """test with an unordered list"""
         self.assertEqual(max_integer([2, 8, 6, 10]), 10)
 
+    def test_one_element(self):
+        """test with a list of one element"""
+        self.assertEqual(max_integer([1]), 1)
+
     def test_max_negative_positive(self):
         """test with negative and positive numbers"""
         self.assertEqual(max_integer([-2, 3, -5, 8]), 8)
