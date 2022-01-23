@@ -132,8 +132,23 @@ The Rock
 
 
 >>> text_indentation("   Nice to meet you.    My   name   is   M.   Smith")
-   Nice to meet you.
+Nice to meet you.
 <BLANKLINE>
 My   name   is   M.
 <BLANKLINE>
 Smith
+
+
+>>> text_indentation("     Holberton.       ")
+Holberton.
+<BLANKLINE>
+
+
+>>> text_indentation("     ")
+
+
+>>> text_indentation("")
+
+
+>>> text_indentation("Holberton ")
+Holberton
