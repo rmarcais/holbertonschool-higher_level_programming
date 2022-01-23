@@ -39,9 +39,8 @@ def text_indentation(text):
             if text[a] != "\n":
                 print()
                 print()
-            if a != len(text) - 1:
                 while a < b and text[a + 1] == " ":
-                    if a != b - 2:
+                    if a != b - 1:
                         a += 1
                     else:
                         return

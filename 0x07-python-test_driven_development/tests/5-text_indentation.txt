@@ -152,3 +152,9 @@ Holberton.
 
 >>> text_indentation("Holberton ")
 Holberton
+
+
+>>> text_indentation("Holberton: !")
+Holberton:
+<BLANKLINE>
+!
