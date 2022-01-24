@@ -4,9 +4,9 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """class to test the function def max_integer(list=[]):."""
-
 
     def test_max_ordered(self):
         """test with an ordered list"""
@@ -44,6 +44,10 @@ class TestMaxInteger(unittest.TestCase):
         """test with int and floats"""
         self.assertEqual(max_integer([1, 2.8, 5, 9.9]), 9.9)
 
+    def test_same_values(self):
+        """test with a list of 5"""
+        self.assertEqual(max_integer([5, 5, 5, 5]), 5)
+
     def test_isnone(self):
         """test when no list is passed"""
         with self.assertRaises(TypeError):
@@ -67,6 +71,7 @@ class TestMaxInteger(unittest.TestCase):
         """test with string as list"""
         self.assertEqual(max_integer(str(123)), '3')
         self.assertEqual(max_integer(str("hello")), "o")
+
 
 if __name__ == '__main__':
     unittest.main()
