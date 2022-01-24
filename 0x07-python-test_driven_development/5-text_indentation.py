@@ -39,11 +39,11 @@ def text_indentation(text):
             if text[a] != "\n":
                 print()
                 print()
-                while a < b and text[a + 1] == " ":
-                    if a != b - 1:
-                        a += 1
-                    else:
-                        return
+            while a < b and text[a + 1] == " ":
+                if a != b - 1:
+                    a += 1
+                else:
+                    return
         else:
             print("{}".format(text[a]), end="")
         a += 1

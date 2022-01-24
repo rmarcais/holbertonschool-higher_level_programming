@@ -158,3 +158,16 @@ Holberton
 Holberton:
 <BLANKLINE>
 !
+
+
+>>> text_indentation("   Holberton!... hello.\n   world!   ")
+Holberton!.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+hello.
+<BLANKLINE>
+<BLANKLINE>
+world!
