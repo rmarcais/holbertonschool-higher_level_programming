@@ -15,6 +15,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_unordered(self):
         """test with an unordered list"""
         self.assertEqual(max_integer([2, 8, 6, 10]), 10)
+        self.assertEqual(max_integer([-1, -6, -9, -7]), -1)
 
     def test_one_element(self):
         """test with a list of one element"""
@@ -25,8 +26,9 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-2, 3, -5, 8]), 8)
 
     def test_max_string(self):
-        """test with a list of strings"""
+        """test with a list of strings (or characters)"""
         self.assertEqual(max_integer(["hello", "my", "school"]), "school")
+        self.assertEqual(max_integer(['a', 'b', 'c', 'd', 'e']), 'e')
 
     def test_max_tuple(self):
         """test with a list of tuples"""
