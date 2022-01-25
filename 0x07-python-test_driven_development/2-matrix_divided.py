@@ -18,12 +18,14 @@ def matrix_divided(matrix, div):
     Return:
     A new matrix
     """
+    message1 = "matrix must be a matrix (list of lists) of integers/floats"
+    message2 = "Each row of the matrix must have the same size"
+    if type(matrix) is not list:
+        raise TypeError(message1)
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    message1 = "matrix must be a matrix (list of lists) of integers/floats"
-    message2 = "Each row of the matrix must have the same size"
     new_matrix = matrix.copy()
     for i in range(len(matrix)):
         new_matrix[i] = matrix[i].copy()
