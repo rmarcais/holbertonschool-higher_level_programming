@@ -58,6 +58,10 @@ when div is float("NaN") or float("inf"):
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 
+>>> matrix_divided([[1, 2], [float("inf"), 4]], float("inf"))
+[[0.0, 0.0], [nan, 0.0]]
+
+
 div as a non-number:
 --------------------
 
@@ -85,6 +89,10 @@ TypeError: div must be a number
 >>> matrix_divided(matrix,)
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+>>> matrix_divided()
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 
 matrix with different row sizes:
