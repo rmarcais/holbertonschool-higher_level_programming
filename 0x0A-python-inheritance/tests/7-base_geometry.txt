@@ -1,0 +1,69 @@
+=============================
+How to use 7-base_geometry.py
+=============================
+
+
+This test file provides tests for the methods of the class BaseGeometry
+called area and integer_validator.
+
+
+Tests:
+======
+
+
+Basic cases:
+------------
+
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+
+>>> bg.integer_validator("my_int", 12)
+
+
+>>> bg.integer_validator("width", 89)
+
+
+Exceptions raising:
+-------------------
+
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+
+>>> bg.integer_validator("hello", 4.2)
+Traceback (most recent call last):
+TypeError: hello must be an integer
+
+
+>>> bg.integer_validator("Holberton", float("inf"))
+Traceback (most recent call last):
+TypeError: Holberton must be an integer
+
+
+>>> bg.integer_validator("School", float("NaN"))
+Traceback (most recent call last):
+TypeError: School must be an integer
+
+
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+
+>>> bg.integer_validator("height", True)
+Traceback (most recent call last):
+TypeError: height must be an integer
