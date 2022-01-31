@@ -16,14 +16,10 @@ class MyInt(int):
         """Tests if an integer is equal to another integer.
         It returns False if yes, True otherwise.
         """
-        if self.value == other:
-            return False
-        return True
+        return self.value != other
 
     def __ne__(self, other):
         """Tests if an integer is not equal to another integer.
         It returns False if yes, True otherwise.
         """
-        if self.value != other:
-            return False
-        return True
+        return self.value == other
