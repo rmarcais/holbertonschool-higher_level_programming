@@ -2,7 +2,7 @@
 """9-rectangle.py
 Classes: BaseGeometry (base class) and Rectangle (subclass).
 Method(s) of BaseGeometry: area, integer_validator
-Method(s) of Rectangle: __init__
+Method(s) of Rectangle: __init__, area and __str__
 """
 
 
