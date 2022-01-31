@@ -5,9 +5,9 @@ Function: add_attribute
 """
 
 
-def add_attribute(a_class, attribute, value):
+def add_attribute(obj, attribute, value):
     """Function that adds a new attribute to an object if it's possible."""
-    try:
-        setattr(a_class, attribute, value)
-    except Exception:
+    if hasattr(obj, "__dict__") is True:
+        setattr(obj, attribute, value)
+    else:
         raise TypeError("can't add new attribute")
