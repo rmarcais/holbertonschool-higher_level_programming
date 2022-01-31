@@ -54,6 +54,16 @@ Traceback (most recent call last):
 TypeError: hello must be an integer
 
 
+>>> bg.integer_validator("Hi", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: Hi must be an integer
+
+
+>>> bg.integer_validator("B99", (1, 2, 3))
+Traceback (most recent call last):
+TypeError: B99 must be an integer
+
+
 >>> bg.integer_validator("Holberton", float("inf"))
 Traceback (most recent call last):
 TypeError: Holberton must be an integer
