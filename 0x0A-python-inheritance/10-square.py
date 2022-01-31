@@ -45,6 +45,7 @@ class Square(Rectangle):
 
     """__init__ method that is called when a new instance is created."""
     def __init__(self, size):
+        super().integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 

@@ -25,7 +25,7 @@ class Rectangle(BaseGeometry):
 
     """The __init__ method, that is called whena new instance is created."""
     def __init__(self, width, height):
-        super().integer_validator("width", width)
+        self.integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height", height)
+        self.integer_validator("height", height)
         self.__height = height
