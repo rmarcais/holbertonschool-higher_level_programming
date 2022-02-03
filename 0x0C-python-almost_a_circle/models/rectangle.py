@@ -41,14 +41,14 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-    @property
+    """@property
     def width(self):
-        """public getter method."""
+        ""public getter method.""
         return self.__width
 
     @width.setter
     def width(self, width):
-        """public setter method."""
+        ""public setter method.""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -57,12 +57,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """public getter method."""
+        ""public getter method.""
         return self.__height
 
     @height.setter
     def height(self, height):
-        """public setter method."""
+        ""public setter method.""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height <= 0:
@@ -71,12 +71,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """public getter method."""
+        ""public getter method.""
         return self.__x
 
     @x.setter
     def x(self, x):
-        """public setter method."""
+        ""public setter method.""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -85,17 +85,17 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """public getter method."""
+        ""public getter method.""
         return self.__y
 
     @y.setter
     def y(self, y):
-        """public setter method."""
+        ""public setter method.""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
             raise ValueError("y must be >= 0")
-        self.__y = y
+        self.__y = y"""
 
     def area(self):
         """Returns the area value of the Rectangle instance."""
@@ -120,3 +120,12 @@ class Rectangle(Base):
                                                        self.__y,
                                                        self.__width,
                                                        self.__height)
+
+    def update(self, *args):
+        """Method that assigns an argument to each attribute."""
+        my_list = ["id", "width", "height",
+                   "x", "y"]
+        i = 0
+        for arg in args:
+            setattr(self, my_list[i], arg)
+            i += 1
