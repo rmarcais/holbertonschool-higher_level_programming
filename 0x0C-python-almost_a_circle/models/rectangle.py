@@ -12,11 +12,11 @@ class Rectangle(Base):
 
     """The __init__ method is called when a new instance is created.
     Args:
-    width
-    height
+    width: The width of the rectangle.
+    height The height of the rectangle.
     x
     y
-    id
+    id: public instance attribute.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -96,3 +96,7 @@ class Rectangle(Base):
         elif y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        """Returns the area value of the Rectangle instance."""
+        return self.__width * self.__height
