@@ -4,6 +4,9 @@ Module containing a class Base.
 """
 
 
+import json
+
+
 class Base:
     """The class Base is the 'base' of all other classes in this project.
     The goal of it is to manage id attribute in all your future classes and to
@@ -22,3 +25,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Static method that returns the JSON string representation of
+        list_dictionaries.
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
