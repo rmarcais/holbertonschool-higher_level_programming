@@ -5,6 +5,7 @@ Module containing a class Base.
 
 
 import json
+import os
 
 
 class Base:
@@ -60,3 +61,30 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Class method that returns an instance with all attributes
+        already set.
+        """
+        if cls.__name__ == "Square":
+            dummy = cls(1, 1, 1, 1)
+        elif cls.__name__ == "Rectangle":
+            dummy = cls(1, 1, 1, 1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Class method that returns a list of instances."""
+        filename = cls.__name__ + ".json"
+        if os.path.exists(filename) is False:
+            return []
+        else:
+            with open(filename, "r") as f:
+                my_list = cls.from_json_string(f.read())
+                list_ins = []
+                for i in range(len(my_list)):
+                    dummy = cls.create(**my_list[i])
+                    list_ins.append(dummy)
+                return list_ins
