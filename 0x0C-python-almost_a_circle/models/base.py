@@ -6,6 +6,7 @@ Module containing a class Base.
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -55,7 +56,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Static method that returns the list of the JSON string representaion
-        json_string.
+        (json_string).
         """
         if json_string is None or json_string == "":
             return []
@@ -66,6 +67,8 @@ class Base:
     def create(cls, **dictionary):
         """Class method that returns an instance with all attributes
         already set.
+        Args:
+        **dictionary: The dictionary representation of an instance.
         """
         if cls.__name__ == "Square":
             dummy = cls(1, 1, 1, 1)
@@ -88,3 +91,42 @@ class Base:
                     dummy = cls.create(**my_list[i])
                     list_ins.append(dummy)
                 return list_ins
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Static method that opens a window and draws all
+        the Rectangles and Squares.
+        Args:
+        list_rectangles: A list of Rectangle instances.
+        list_squares: A list of Squares instances.
+        """
+        turtle.color("green")
+        turtle.shape("turtle")
+        turtle.pencolor("green")
+        turtle.speed(3)
+        turtle.pensize(5)
+        for rectangles in list_rectangles:
+            turtle.penup()
+            turtle.goto(rectangles.x, rectangles.y)
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(rectangles.width)
+                turtle.right(90)
+                turtle.forward(rectangles.height)
+                turtle.right(90)
+
+        for squares in list_squares:
+            turtle.penup()
+            turtle.goto(squares.x, squares.y)
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(squares.size)
+                turtle.right(90)
+                turtle.forward(squares.size)
+                turtle.right(90)
+
+        turtle.penup()
+        turtle.goto(-200, -200)
+        turtle.write("Done ! (click to exit)", font=("Arial", 16, "normal"))
+        turtle.hideturtle()
+        turtle.exitonclick()
