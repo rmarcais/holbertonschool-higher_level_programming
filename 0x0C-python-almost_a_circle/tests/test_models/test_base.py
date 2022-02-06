@@ -2,7 +2,6 @@
 """
 Add unit test for the class Base
 """
-import json
 import os
 import unittest
 from models.base import Base
