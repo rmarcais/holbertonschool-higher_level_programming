@@ -181,6 +181,21 @@ class Test_display(unittest.TestCase):
             r = Rectangle(None, None, None, None)
             r.display()
 
+    def test_display_no_args(self):
+        """Test the display method without arguments."""
+        with self.assertRaises(TypeError):
+            Rectangle.display()
+
+    def test_display_no_x(self):
+        """Test the display method without x."""
+        r1 = Rectangle(1, 1)
+        r1.display()
+
+    def test_display_no_y(self):
+        """Test the display method without y."""
+        r1 = Rectangle(1, 1, 1)
+        r1.display()
+
 
 class Test_width(unittest.TestCase):
 
