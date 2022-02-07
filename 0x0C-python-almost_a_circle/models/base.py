@@ -71,10 +71,10 @@ class Base:
         **dictionary: The dictionary representation of an instance.
         """
         if dictionary is not None and dictionary != {}:
-            if cls.__name__ == "Square":
-                dummy = cls(1, 1, 1, 1)
             if cls.__name__ == "Rectangle":
-                dummy = cls(1, 1, 1, 1, 1)
+                dummy = cls(1, 1, 1, 1)
+            else:
+                dummy = cls(1)
                 dummy.update(**dictionary)
                 return dummy
 
