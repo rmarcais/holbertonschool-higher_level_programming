@@ -7,6 +7,7 @@ Module containing a class Base.
 import json
 import os
 import turtle
+import csv
 
 
 class Base:
@@ -91,6 +92,33 @@ class Base:
                     dummy = cls.create(**my_list[i])
                     list_ins.append(dummy)
                 return list_ins
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Method that serializes in CSV.
+        Args:
+        list_object: The list which must be serialized.
+        """
+        filename = cls.__name__ + ".csv"
+        f = open(filename, "w")
+        if list_objs is None:
+            f.write("[]")
+        else:
+            writer = csv.writer(f)
+            for o in list_objs:
+                writer.writerow("{}{}{}{}{}".format(o.id, o.width, o.height,
+                                                    o.x, o.y))
+        f.close()
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        if os.path.exists(filename) is False:
+            return []
+        else:
+            f = open(filename, "r")
+            reader = csv.reader(f)
+            return reader
 
     @staticmethod
     def draw(list_rectangles, list_squares):
