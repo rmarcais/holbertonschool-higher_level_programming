@@ -108,7 +108,7 @@ class Test_display(unittest.TestCase):
         """
 
         r = Rectangle(2, 2, 3, 4)
-        self.assertEqual(R.display(), None)
+        self.assertEqual(r.display(), None)
 
     def test_display_neg(self):
         with self.assertRaises(ValueError):
@@ -185,7 +185,7 @@ class Test_width(unittest.TestCase):
             - None
         """
         r = Rectangle(5, 5, 2, 3)
-        self.assertEqual(R.width, 5)
+        self.assertEqual(r.width, 5)
 
     def test_width_neg(self):
         with self.assertRaises(ValueError):
@@ -261,7 +261,7 @@ class Test_height(unittest.TestCase):
             - None
         """
         r = Rectangle(5, 5, 2, 3)
-        self.assertEqual(R.height, 5)
+        self.assertEqual(r.height, 5)
 
     def test_height_neg(self):
 
@@ -669,7 +669,7 @@ class TestRectangle_update_args(unittest.TestCase):
 
     def test_update_args_more_than_five(self):
         r = Rectangle(10, 10, 10, 10, 10)
-        r.update(89, 2, 3, 4, 5)
+        r.update(89, 2, 3, 4, 5, 6)
         self.assertEqual("[Rectangle] (89) 4/5 - 2/3", str(r))
 
     def test_update_args_None_id(self):
