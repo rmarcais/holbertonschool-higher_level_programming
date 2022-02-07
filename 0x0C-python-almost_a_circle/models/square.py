@@ -1,4 +1,4 @@
-#!/usr/bni/python3
+#!/usr/bin/python3
 """square.py
 Modules that defines a class Square.
 """
