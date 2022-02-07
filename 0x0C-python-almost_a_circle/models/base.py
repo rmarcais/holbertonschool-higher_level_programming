@@ -70,7 +70,10 @@ class Base:
         Args:
         **dictionary: The dictionary representation of an instance.
         """
-        dummy = cls(1, 1, 1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1, 1, 1, 1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1, 1, 1, 1)
         dummy.update(**dictionary)
         return dummy
 
