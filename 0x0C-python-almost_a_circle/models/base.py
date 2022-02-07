@@ -112,6 +112,13 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Returns a list of instances.
+        The filename must be: <Class name>.csv - example: Rectangle.csv
+        Has the same behavior as the JSON serialization/deserialization
+        Format of the CSV:
+        Rectangle: <id>,<width>,<height>,<x>,<y>
+        Square: <id>,<size>,<x>,<y>
+        """
         filename = cls.__name__ + ".csv"
         if os.path.exists(filename) is False:
             return []
