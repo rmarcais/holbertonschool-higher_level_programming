@@ -287,6 +287,18 @@ class TestBaseCreate(unittest.TestCase):
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
 
+    def test_create_rectangle_error(self):
+        """Raise an error with the method create (rectangle)."""
+        with self.assertRaises(TypeError):
+            r1 = "Holberton"
+            r2 = Rectangle.create(r1)
+
+    def test_create_square_error(self):
+        """Raise an error with the method create (square)."""
+        with self.assertRaises(TypeError):
+            s1 = "School"
+            s2 = Square.create(s1)
+
 
 class TestLoadFromFile(unittest.TestCase):
     """Class that tests the Base method 'load_from_file'."""
