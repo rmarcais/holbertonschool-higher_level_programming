@@ -287,59 +287,57 @@ class Test_height(unittest.TestCase):
 
     def test_height_neg(self):
         """Test with negative hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, -5, -5, -5)
-            r.height()
+            r.height = -1
 
     def test_height_zero(self):
         """Test with 0 hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, 0, -5, -5)
-            r.height()
+            r.height = 0
 
     def test_height_bool(self):
         """Test with bool hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle(True, False, False, True)
-            r.height()
+            r.height = True
 
     def test_height_str(self):
         """Test with string hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle("Alfred", "Robin", "Batman", "Batgirl")
-            r.height()
+            r.height = "hello"
 
     def test_height_tuple(self):
         """Test with tuple hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))
-            r.height()
+            r.height = (1, 2, 3)
 
     def test_height_list(self):
         """Test with list hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3])
-            r.height()
+            r.height = [1, 2, 3]
 
     def test_height_dict(self):
         """Test with dict hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle({1, 2, 3}, {1, 2, 3}, {1, 2, 3}, {1, 2, 3})
-            r.height()
+            r.height = {}
 
     def test_height_float_inf(self):
         """Test with float hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle(float("inf"), float("inf"),
-                          float("inf"), float("inf"))
-            r.height()
+            r.height = float("inf")
 
     def test_height_flaot_NaN(self):
         """Test with float NaN hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle(float("NaN"), float("NaN"),
-                          float("NaN"), float("NaN"))
-            r.height()
+            r.height = float("NaN")
 
     def test_height_empty(self):
         """Test with empty hight."""
@@ -348,9 +346,9 @@ class Test_height(unittest.TestCase):
             r.height()
 
     def test_height_None(self):
+        r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
-            r = Rectangle(None, None, None, None)
-            r.height()
+            r.height = None
 
 
 class TestRectangle_instantiation(unittest.TestCase):
