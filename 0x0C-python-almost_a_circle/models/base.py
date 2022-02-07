@@ -71,9 +71,9 @@ class Base:
         **dictionary: The dictionary representation of an instance.
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1, 1, 1, 1)
+            dummy = cls(1, 1)
         else:
-            dummy = cls(1, 1, 1, 1)
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
