@@ -100,15 +100,18 @@ class Base:
         list_object: The list which must be serialized.
         """
         filename = cls.__name__ + ".csv"
-        f = open(filename, "w")
-        if list_objs is None:
-            f.write("[]")
-        else:
-            writer = csv.writer(f)
-            for o in list_objs:
-                writer.writerow("{}{}{}{}{}".format(o.id, o.width, o.height,
-                                                    o.x, o.y))
-        f.close()
+        with open(filename, "w", newline='') as cvfile:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    fieldnames = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(cvfile, fieldnames=fieldnames)
+                writer.writeheader()
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -123,9 +126,15 @@ class Base:
         if os.path.exists(filename) is False:
             return []
         else:
-            f = open(filename, "r")
-            reader = csv.reader(f)
-            return reader
+            with open(filename, newline='') as cvfile:
+                reader = csv.DictReader(cvfile)
+                new = []
+                for row in reader:
+                    for key, value in row.items():
+                        row[key] = int(value)
+                    dummy = cls.create(**row)
+                    new.append(dummy)
+            return new
 
     @staticmethod
     def draw(list_rectangles, list_squares):
