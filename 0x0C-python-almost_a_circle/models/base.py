@@ -70,13 +70,12 @@ class Base:
         Args:
         **dictionary: The dictionary representation of an instance.
         """
-        if dictionary is not None and dictionary != {}:
-            if cls.__name__ == "Rectangle":
-                dummy = cls(1, 1, 1, 1)
-            else:
-                dummy = cls(1)
-                dummy.update(**dictionary)
-                return dummy
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1, 1, 1, 1)
+        else:
+            dummy = cls(1, 1, 1, 1)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):

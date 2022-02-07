@@ -201,6 +201,22 @@ class Test_width(unittest.TestCase):
         self.assertEqual(r.width, 5)
 
     def test_width_neg(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 1, 1, 1, 1)
+
+    def test_height_neg_2(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -1, 1, 1, 1)
+
+    def test_width_0_2(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 1, 1, 1, 1)
+
+    def test_heigth_0_2(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0, 1, 1, 1)
+
+    def test_width_neg_2(self):
         """Test with negative width."""
         r = Rectangle(1, 1, 1, 1, 1)
         with self.assertRaises(ValueError):
