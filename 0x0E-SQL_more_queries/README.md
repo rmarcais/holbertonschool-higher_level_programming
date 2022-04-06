@@ -107,4 +107,3 @@ id  name
 8   Thriller
 $
 ```
-![cheatsheet](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220406%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220406T123933Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3da2b3d7d3633c5c424b602908e9ae5eac208fce33587e920ffff0f3a43e5e6d)
