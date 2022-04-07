@@ -5,11 +5,10 @@ script that prints all City objects from the database hbtn_0e_14_usa
 
 import sqlalchemy as sa
 import sys
-from sqlalchemy import Sequence
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
