@@ -16,5 +16,8 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
     first = session.query(State).first()
-    print("{}: {}".format(first.id, first.name))
+    try:
+        print("{}: {}".format(first.id, first.name))
+    except Exception:
+        print("Nothing")
     session.close()
