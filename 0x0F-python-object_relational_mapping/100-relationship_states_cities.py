@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-script that creates the State “California” with
-the City “San Francisco” from the database hbtn_0e_100_usa
+creates the State California with the City San Francisco from the database
 """
 
 import sqlalchemy
@@ -10,6 +9,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 import sys
+
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
     new_state = State(name="California")
-    new_state.cities.append(City(name="San Fransisco"))
+    new_state.cities.append(City(name="San Francisco"))
     session.add(new_state)
     session.commit()
     session.close()
