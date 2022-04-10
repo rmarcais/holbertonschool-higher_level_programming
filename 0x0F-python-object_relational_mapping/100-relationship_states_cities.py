@@ -5,7 +5,7 @@ creates the State California with the City San Francisco from the database
 
 import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 import sys
