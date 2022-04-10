@@ -5,12 +5,11 @@ the City “San Francisco” from the database hbtn_0e_100_usa
 """
 
 import sqlalchemy
-import sys
-from sqlalchemy import Sequence
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import Session, sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker, relationship
+import sys
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
