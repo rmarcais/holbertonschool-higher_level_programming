@@ -14,7 +14,11 @@ def find_peak(list_of_integers):
     if ln == 1:
         return li[0]
 
-    if li[int(ln / 2)] <= li[int(ln / 2 - 1)]:
+    if li[int(ln / 2)] > li[int(ln / 2 - 1)] and li[
+            int(ln / 2)] > li[int(ln / 2 + 1)]:
+        return(li[int(ln / 2)])
+
+    elif li[int(ln / 2)] <= li[int(ln / 2 - 1)]:
         return(find_peak(li[0:int(ln / 2)]))
     else:
         return(find_peak(li[int(ln / 2):int(ln)]))
