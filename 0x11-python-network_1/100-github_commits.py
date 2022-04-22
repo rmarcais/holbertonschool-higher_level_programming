@@ -13,7 +13,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    url = f'https://api.github.com/repos/{argv[2]}/{argv[1]}/commits'
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[1], argv[2])
     r = requests.get(url)
     for i in range(10):
         sha = r.json()[i].get("sha")
