@@ -9,11 +9,13 @@ response (decoded in utf-8)
 from urllib import parse, request
 from sys import argv
 
-url = argv[1]
-value = {'email': argv[2]}
-data = parse.urlencode(value)
-data = data.encode('ascii')
-req = request.Request(url, data)
-with request.urlopen(req) as r:
-    the_page = r.read()
-print(the_page.decode('utf8'))
+
+if __name__ == "__main__":
+    url = argv[1]
+    value = {'email': argv[2]}
+    data = parse.urlencode(value)
+    data = data.encode('ascii')
+    req = request.Request(url, data)
+    with request.urlopen(req) as r:
+        the_page = r.read()
+    print(the_page.decode('utf8'))
