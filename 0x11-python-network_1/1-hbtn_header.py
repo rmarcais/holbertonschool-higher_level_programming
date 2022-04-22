@@ -6,12 +6,13 @@ of the response.
 """
 
 
-import urllib.request as u
-from sys import argv
+if __name__ == "__main__":
+    import urllib.request as u
+    from sys import argv
 
-req = u.Request(argv[1])
-with u.urlopen(req) as r:
-    for i in r.getheaders():
-        if i[0] == "X-Request-Id":
-            print(i[1])
-            break
+    req = u.Request(argv[1])
+    with u.urlopen(req) as r:
+        for i in r.getheaders():
+            if i[0] == "X-Request-Id":
+                print(i[1])
+                break
