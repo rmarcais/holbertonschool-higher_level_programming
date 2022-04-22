@@ -7,7 +7,7 @@ http://0.0.0.0:5000/search_user with the letter as a parameter.
 import requests
 from sys import argv
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     if len(argv) < 2:
         d = {'q': ""}
     else:
@@ -18,6 +18,6 @@ if __name__ =="__main__":
         if r.json() == {}:
             print("No result")
         else:
-            print("[{}] {}".format(r.json()["id"], r.json()["name"]))
+            print("[{}] {}".format(r.json().get("id"), r.json().get("name")))
     except Exception:
         print("Not a valid JSON")
