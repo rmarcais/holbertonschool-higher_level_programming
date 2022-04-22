@@ -10,7 +10,7 @@ if len(argv) < 2:
     d = {'q': ""}
 else:
     d = {'q': argv[1]}
-r = requests.post('http://9baca356a28f.c90a0b50.hbtn-cod.io:5000/search_user',
+r = requests.post('http://0.0.0.0:5000/search_user',
                   data=d)
 try:
     if r.json() == {}:
