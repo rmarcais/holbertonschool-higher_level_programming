@@ -8,6 +8,8 @@ body of the response.
 import requests
 from sys import argv
 
-d = {'email': argv[2]}
-r = requests.post(argv[1], data=d)
-print(r.text)
+
+if __name__ == "__main__":
+    d = {'email': argv[2]}
+    r = requests.post(argv[1], data=d)
+    print(r.text)
