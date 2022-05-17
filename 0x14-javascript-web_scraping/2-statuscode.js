@@ -4,8 +4,8 @@ const axios = require('axios').default;
 
 axios.get(args[2])
   .then(function (response) {
-    console.log(response.status);
+    console.log('code: ' + response.status);
   })
   .catch(function (error) {
-    console.log(error.response.status);
+    console.log('code: ' + error.response.status);
   });
