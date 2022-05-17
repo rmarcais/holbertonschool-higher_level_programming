@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const args = process.argv;
-import axios from 'axios';
+const axios = require('axios').default;
 
 axios.get('https://swapi-api.hbtn.io/api/films/' + args[2])
   .then(function (response) {
