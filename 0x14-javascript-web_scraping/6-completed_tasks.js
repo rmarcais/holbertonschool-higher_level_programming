@@ -19,4 +19,7 @@ axios.get(args[2])
       tmp = response.data[i].userId;
     }
     console.log(dico);
+  })
+  .catch(function (error) {
+    console.log(error);
   });

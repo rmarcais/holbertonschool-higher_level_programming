@@ -13,4 +13,7 @@ axios.get(args[2])
       }
     }
     console.log(count);
+  })
+  .catch(function (error) {
+    console.log(error);
   });

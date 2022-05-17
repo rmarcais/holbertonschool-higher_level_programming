@@ -10,4 +10,7 @@ axios.get(args[2])
         console.log(err);
       }
     });
+  })
+  .catch(function (error) {
+    console.log(error);
   });
