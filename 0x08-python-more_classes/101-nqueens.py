@@ -14,7 +14,7 @@ def add_solution(board, res, n):
     for i in range(n):
         for j in range(n):
             if board[i][j] == 1:
-                tmp.appeprint(res)nd([i, j])
+                tmp.append([i, j])
     res.append(tmp)
 
 
