@@ -25,13 +25,9 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        if self.radius < 0:
-            return 0
         return pi * (self.radius**2)
 
     def perimeter(self):
-        if self.radius < 0:
-            return 0
         return 2 * pi * self.radius
 
 
@@ -44,13 +40,9 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
-        if self.width < 0 or self.height < 0:
-            return 0
         return self.width * self.height
 
     def perimeter(self):
-        if self.width < 0 or self.height < 0:
-            return 0
         return 2 * self.width + 2 * self.height
 
 
