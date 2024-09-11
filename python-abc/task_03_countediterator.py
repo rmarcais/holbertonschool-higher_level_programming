@@ -22,7 +22,8 @@ class CountedIterator():
     def __next__(self):
         """Returns the next item of the original iterator"""
         try:
-            next(self.iterator)
+            item = next(self.iterator)
             self.counter += 1
+            return item
         except StopIteration:
             raise StopIteration

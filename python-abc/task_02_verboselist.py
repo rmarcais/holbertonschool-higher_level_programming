@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Abstract Animal Class and its Subclasses"""
+"""Extending the Python List with Notifications"""
 
 from abc import ABC, abstractmethod
 
