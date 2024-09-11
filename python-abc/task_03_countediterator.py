@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """CountedIterator - Keeping Track of Iteration"""
 
-from abc import ABC, abstractmethod
-
 
 class CountedIterator():
     """

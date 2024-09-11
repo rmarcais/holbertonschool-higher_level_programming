@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Extending the Python List with Notifications"""
 
-from abc import ABC, abstractmethod
-
 
 class VerboseList(list):
     """Class that inherits from the built-in list class"""
