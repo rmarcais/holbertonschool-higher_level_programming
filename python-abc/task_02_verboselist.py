@@ -26,5 +26,6 @@ class VerboseList(list):
         try:
             item = super().pop(index)
             print("Popped [{}] from the list.".format(item))
+            return item
         except IndexError:
             print("Index {} doesn't exist".format(index))
