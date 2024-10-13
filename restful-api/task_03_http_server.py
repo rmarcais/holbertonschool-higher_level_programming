@@ -45,7 +45,7 @@ class Server(http.server.BaseHTTPRequestHandler):
 
 
 def run(server_class=http.server.HTTPServer, handler_class=Server):
-    server_address = ('', 5000)
+    server_address = ('', 8000)
     print(f"Server running on port {server_address[1]} ...")
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
