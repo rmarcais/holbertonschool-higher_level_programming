@@ -12,8 +12,8 @@ app.config["JWT_SECRET_KEY"] = "holberton-secret-key"
 jwt = JWTManager(app)
 
 users = {
-    "user1": {"username": "user1", "password": generate_password_hash("hello"), "role": "user"},
-    "admin1": {"username": "admin1", "password": generate_password_hash("test"), "role": "admin"}
+    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
+    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
 }
 
 
