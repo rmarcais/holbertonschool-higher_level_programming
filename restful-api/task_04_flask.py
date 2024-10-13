@@ -38,17 +38,20 @@ def user_data(username):
 @app.route("/add_user", methods=["POST"])
 def add_user():
     status = 201
-    parsed_json = request.get_json()
-    username = parsed_json.get("username")
-    message = parsed_json
+    new_user = request.get_json()
+    username = new_user.get("username")
+    response_message = {
+        "message": "User added",
+        "user": new_user
+    }
 
     if username:
-        users[username] = parsed_json
+        users[username] = new_user
     else:
         status = 400
-        message = {"error": "Username is required"}
+        response_message = {"error": "Username is required"}
 
-    return jsonify(message), status
+    return jsonify(response_message), status
 
 
 if __name__ == "__main__":
