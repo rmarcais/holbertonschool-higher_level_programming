@@ -29,10 +29,10 @@ def generate_invitations(template, attendees):
         event_date = attendee.get("event_date")
         event_location = attendee.get("event_location")
 
-        output = template.replace("{name}", name if name else "N\A")
-        output = output.replace("{event_title}", event_title if event_title else "N\A")
-        output = output.replace("{event_date}", event_date if event_date else "N\A")
-        output = output.replace("{event_location}", event_location if event_location else "N\A")
+        output = template.replace("{name}", name if name else "N/A")
+        output = output.replace("{event_title}", event_title if event_title else "N/A")
+        output = output.replace("{event_date}", event_date if event_date else "N/A")
+        output = output.replace("{event_location}", event_location if event_location else "N/A")
 
         try:
             with open(f"output_{index}.txt", 'w') as file:
