@@ -20,6 +20,7 @@ def generate_invitations(template, attendees):
 
     if not os.path.exists("./template.txt"):
         print("Missing template.txt")
+        return
 
     with open("template.txt", 'r') as file:
         template = file.read()
