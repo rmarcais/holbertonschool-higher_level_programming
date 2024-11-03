@@ -14,20 +14,12 @@ def generate_invitations(template, attendees):
             not all(isinstance(attendee, dict) for attendee in attendees):
         print("Attendees should be a list of dictionnaries!")
         return
+    elif not template:
+        print("Template is empty, no output files generated.")
+        return
     elif len(attendees) == 0:
         print("No data provided, no output files generated.")
         return
-
-    if not os.path.exists("./template.txt"):
-        print("Missing template.txt")
-        return
-
-    with open("template.txt", 'r') as file:
-        template = file.read()
-
-        if not template:
-            print("Template is empty, no output files generated.")
-            return
 
     index = 1
 
